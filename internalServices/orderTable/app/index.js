@@ -14,6 +14,10 @@ class OrderTable extends Component {
     dispatch(getOrderList());
   }
 
+  menuFormatter = (cell, row) => {
+    return cell.split(",").join("<br/>")
+  }
+
   render() {
     if (!this.props.orders) {
       return null
@@ -24,7 +28,7 @@ class OrderTable extends Component {
         <TableHeaderColumn dataField="idx" isKey={true} dataSort={true} width="120">주문 No.</TableHeaderColumn>
         <TableHeaderColumn dataField="nickname" dataSort={true}>회원이름</TableHeaderColumn>
         <TableHeaderColumn dataField="addr_no">주소</TableHeaderColumn>
-        <TableHeaderColumn dataField="MENU_NAME">메뉴</TableHeaderColumn>
+        <TableHeaderColumn dataField="MENU_NAME" dataFormat={this.menuFormatter}>메뉴</TableHeaderColumn>
         <TableHeaderColumn dataField="time_slot" dataSort={true} width="150">시간대</TableHeaderColumn>
         <TableHeaderColumn>관리</TableHeaderColumn>
       </BootstrapTable>
