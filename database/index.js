@@ -4,6 +4,49 @@ const Promise = require('bluebird');
 
 function defaultFuntionsWithKnexObject(knex) {
   return {
+    getOrderList: () => {
+      return knex.raw(`SELECT order_meta.idx
+     , user.nickname 
+     , CONCAT(user_address.address ,' ', user_address.address_detail ) as addr_no
+     , (SELECT GROUP_CONCAT(menu.name_menu SEPARATOR ',') as menu_name 
+          FROM order_detail 
+             , menu
+         WHERE order_detail.order_idx = order_meta.idx 
+           AND menu.idx               = order_detail.menu_idx ) AS MENU_NAME
+     , time_slot.time_str
+  FROM order_meta
+     , user 
+     , user_address
+     , time_slot
+ WHERE user.idx                 = order_meta.user_idx
+   AND user_address.user_idx    = order_meta.user_idx
+   AND user_address.idx         = order_meta.address_idx
+   AND time_slot.idx            = order_meta.time_slot
+   AND DATE_FORMAT(order_meta.request_time,'%Y%m%d') = '20160816' 
+ ORDER
+    BY time_slot.time_str, order_meta.request_time
+;`)
+      // return knex('order_meta')
+      //   .join('user', 'user.idx', 'order_meta.user_idx')
+      //   .join('user_address', 'user_address.idx', 'order_meta.address_idx')
+      //   .join('order_detail', 'order_detail.order_idx', 'order_meta.idx')
+      //   .join('menu', 'menu.idx', 'order_detail.menu_idx')
+      //   .join('time_slot', 'time_slot.idx', 'order_meta.time_slot')
+      //   .select([
+      //     "order_meta.idx",
+      //     "user.nickname",
+      //     "user_address.address",
+      //     "user_address.address_detail",
+      //     "menu.name_menu",
+      //     "time_slot.time_str",
+      //     knex('order_detail')
+      //       .join('menu', 'order_detail.order_idx', 'menu.idx')
+      //       .select(knex.raw('GROUP_CONCAT(menu.name_menu SEPARATOR ",") as menu_name)'))
+      //       .where('order_detail.order_idx', 'order_meta.idx')
+      //   ])
+      //   .where('user_address.user_idx', 'order_meta.user_idx')
+    },
+
     insertOrderDetail: (row) =>
       knex('order_detail')
         .insert(row),

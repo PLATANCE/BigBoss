@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import OrderTable from "./OrderTable"
+import OrderTable from "../internalServices/orderTable/app"
 
 export default function Index() {
   return (

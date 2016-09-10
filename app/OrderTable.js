@@ -25,44 +25,9 @@ class OrderTable extends Component {
     return this.products
   }
 
-  renderHead() {
-    return (
-      <tr>
-        <td>head1</td>
-        <td>head2</td>
-        <td>head3</td>
-        <td>head4</td>
-        <td>head5</td>
-      </tr>
-    )
-  }
-  renderRow() {
-    return (
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-      </tr>
-    )
-  }
-
   render() {
     return (
       <div>
-        <table>
-          <thead>
-          {this.renderHead()}
-          </thead>
-          <tbody>
-            {this.renderRow()}
-            {this.renderRow()}
-            {this.renderRow()}
-            {this.renderRow()}
-            {this.renderRow()}
-          </tbody>
-        </table>
         <BootstrapTable data={this.getProduct()} search={true}>
           <TableHeaderColumn dataField="orderNum" isKey={true} dataSort={true} width="120">주문 No.</TableHeaderColumn>
           <TableHeaderColumn dataField="userNum" dataSort={true} width="120">회원번호</TableHeaderColumn>
