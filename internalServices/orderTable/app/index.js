@@ -25,7 +25,7 @@ class OrderTable extends Component {
         <TableHeaderColumn dataField="nickname" dataSort={true}>회원이름</TableHeaderColumn>
         <TableHeaderColumn dataField="addr_no">주소</TableHeaderColumn>
         <TableHeaderColumn dataField="MENU_NAME">메뉴</TableHeaderColumn>
-        <TableHeaderColumn dataField="time_str" dataSort={true} width="150">시간대</TableHeaderColumn>
+        <TableHeaderColumn dataField="time_slot" dataSort={true} width="150">시간대</TableHeaderColumn>
         <TableHeaderColumn>관리</TableHeaderColumn>
       </BootstrapTable>
     )
