@@ -13,7 +13,7 @@ function defaultFuntionsWithKnexObject(knex) {
              , menu
          WHERE order_detail.order_idx = order_meta.idx 
            AND menu.idx               = order_detail.menu_idx ) AS MENU_NAME
-     , time_slot.time_str
+     , time_slot.time_slot
   FROM order_meta
      , user 
      , user_address
