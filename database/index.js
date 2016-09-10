@@ -24,7 +24,7 @@ function defaultFuntionsWithKnexObject(knex) {
    AND time_slot.idx            = order_meta.time_slot
    AND DATE_FORMAT(order_meta.request_time,'%Y%m%d') = '20160816' 
  ORDER
-    BY time_slot.time_str, order_meta.request_time
+    BY time_slot.time_str, order_meta.idx
 ;`)
       // return knex('order_meta')
       //   .join('user', 'user.idx', 'order_meta.user_idx')
