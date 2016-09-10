@@ -37,3 +37,20 @@
   border-bottom: 5px solid #cc2710;
 
 }
+
+.change-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  background: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.change-popup.show {
+  display: block;
+}
