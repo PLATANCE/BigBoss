@@ -1,0 +1,39 @@
+.top{
+  margin-top: 20px;
+}
+#orderIdxInput {
+  font-size: 2em !important;
+}
+#userIdxInput {
+  font-size: 2em !important;
+}
+.searchButton{
+  margin-bottom: 10px;
+}
+
+.pointButton {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.widthFull{
+  width: 100%;
+}
+
+.top50{
+  margin-top: 50px;
+}
+
+.white-space-pre {
+    white-space: pre-wrap;
+}
+
+.MenuManagerHeader {
+  color:#FFE7B2;
+  text-align:center;
+  background-color: #FF5722;
+  margin: 0 auto;
+  height: 75px;
+  line-height: 75px;
+  border-bottom: 5px solid #cc2710;
+
+}

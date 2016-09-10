@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/fixed-data-table.min.css">
+	<link rel="stylesheet" type="text/css" href="build/flexBox.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link  rel="stylesheet" type="text/css"
+		href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src="lib/jquery-2.2.2.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+	<script src="/lib/lodash-4.13.1.js"></script>
+	<script src="//apis.daum.net/maps/maps3.js?apikey=675205fcd0c909f0735a19a3c8636691&libraries=services"></script>
+
+
+	<title>Big Boss is Wathcing You.</title>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script src="build/build.js"></script>
+	<script>
+	(function removeFacebookAppendedHash() {
+	  if (!window.location.hash || window.location.hash !== '#_=_')
+	    return;
+	  if (window.history && window.history.replaceState)
+	    return window.history.replaceState('', document.title, window.location.pathname + window.location.search);
+	  // Prevent scrolling by storing the page's current scroll offset
+	  var scroll = {
+	    top: document.body.scrollTop,
+	    left: document.body.scrollLeft
+	  };
+	  window.location.hash = "";
+	  // Restore the scroll offset, should be flicker free
+	  document.body.scrollTop = scroll.top;
+	  document.body.scrollLeft = scroll.left;
+	}());
+	</script>
+</body>
+</html>
