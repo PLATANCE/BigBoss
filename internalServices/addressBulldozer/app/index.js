@@ -38,7 +38,7 @@ function AddressBulldozer({
   } = addressSearchReducer;
   return (
     <div className="container-fluid">
-      <div className="col-xs-5">
+      <div className="col-xs-7">
         <MainController
           orderIdx={orderIdx}
           addressIdx={addressIdx}
@@ -60,7 +60,7 @@ function AddressBulldozer({
           clear={() => dispatch(clear())}
         />
       </div>
-      <div className="col-xs-7">
+      <div className="col-xs-5">
         <AddressSearch
           query={query}
           searchResults={searchResults}

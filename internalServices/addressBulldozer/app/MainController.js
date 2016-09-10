@@ -51,24 +51,24 @@ export default class MainController extends Component {
         </div>
         <div>
           <div className="row">
-            <div className="col-xs-2">주문 번호</div>
-            <div className="col-xs-10">{orderIdx}</div>
+            <div className="col-xs-4">주문 번호</div>
+            <div className="col-xs-8">{orderIdx}</div>
           </div>
           <div className="row">
-            <div className="col-xs-2">주소 번호</div>
-            <div className="col-xs-10">{addressIdx}</div>
+            <div className="col-xs-4">주소 번호</div>
+            <div className="col-xs-8">{addressIdx}</div>
           </div>
           <div className="row">
-            <div className="col-xs-2">지번주소</div>
-            <div className="col-xs-10">{jibunAddress}</div>
+            <div className="col-xs-4">지번주소</div>
+            <div className="col-xs-8">{jibunAddress}</div>
           </div>
           <div className="row">
-            <div className="col-xs-2">도로명주소</div>
-            <div className="col-xs-10">{roadNameAddress}</div>
+            <div className="col-xs-4">도로명주소</div>
+            <div className="col-xs-8">{roadNameAddress}</div>
           </div>
           <div className="row">
-            <div className="col-xs-2">상세 주소</div>
-            <div className="col-xs-10">{addressDetail}</div>
+            <div className="col-xs-4">상세 주소</div>
+            <div className="col-xs-8">{addressDetail}</div>
           </div>
         </div>
         <div className="row">
