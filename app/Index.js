@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import OrderTable from "./OrderTable"
 
 export default function Index() {
   return (
@@ -15,12 +16,13 @@ export default function Index() {
         <Link to={'/tastingOrderer'}>'/tastingOrderer'</Link>
         <Link to={'/collectionThirdPartyOrder'}>'/collectionThirdPartyOrder'</Link>
         <Link to={'/userManagement'}>'/userManagement'</Link>
-
       </div>
       <hr />
       <div>
         <Link to={'/B2BManager'}>B2B 관리</Link>
       </div>
+
+      <OrderTable />
     </div>
 
 
