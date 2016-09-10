@@ -22,7 +22,7 @@ function defaultFuntionsWithKnexObject(knex) {
    AND user_address.user_idx    = order_meta.user_idx
    AND user_address.idx         = order_meta.address_idx
    AND time_slot.idx            = order_meta.time_slot
-   AND DATE_FORMAT(order_meta.request_time,'%Y%m%d') = '20160816' 
+   AND DATE_FORMAT(order_meta.request_time,'%Y%m%d') = DATE_FORMAT(now(),'%Y%m%d')
  ORDER
     BY time_slot.time_str, order_meta.idx
 ;`)
