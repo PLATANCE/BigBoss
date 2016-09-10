@@ -17,6 +17,7 @@ class OrderTable extends Component {
       timeChangePopup: false
     }
     this.openPopup = this.openPopup.bind(this)
+    this.closePopup = this.closePopup.bind(this)
     this.menuFormatter = this.menuFormatter.bind(this)
     this.addressButton = this.addressButton.bind(this)
     this.timeButton = this.timeButton.bind(this)
@@ -31,7 +32,18 @@ class OrderTable extends Component {
 
   openPopup(title) {
     return (e) => {
+      this.setState({
+        addressChangePopup: false,
+        menuChangePopup: false,
+        timeChangePopup: false
+      })
       this.setState({[`${title}ChangePopup`]: true})
+    }
+  }
+
+  closePopup(title) {
+    return (e) => {
+      this.setState({[`${title}ChangePopup`]: false})
     }
   }
 
@@ -73,9 +85,9 @@ class OrderTable extends Component {
           <TableHeaderColumn dataField="time_slot" dataSort={true} width="150" dataFormat={this.timeButton}>시간대</TableHeaderColumn>
           <TableHeaderColumn width="100">관리</TableHeaderColumn>
         </BootstrapTable>
-        <AddressChangePopup show={this.state.addressChangePopup} />
-        <MenuChangePopup show={this.state.menuChangePopup} />
-        <TimeChangePopup show={this.state.timeChangePopup} />
+        <AddressChangePopup show={this.state.addressChangePopup} onClose={this.closePopup("address")} />
+        <MenuChangePopup show={this.state.menuChangePopup} onClose={this.closePopup("menu")} />
+        <TimeChangePopup show={this.state.timeChangePopup} onClose={this.closePopup("time")} />
       </div>
     )
   }
