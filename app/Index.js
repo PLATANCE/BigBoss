@@ -6,16 +6,19 @@ export default function Index() {
   return (
     <div className="container">
       <div>
-        <Link to={'/addressBulldozer'}>'/addressBulldozer'</Link>
-        <Link to={'/timeChanger'}>'/timeChanger'</Link>
-        <Link to={'/thirdPartyOrderService'}>'/thirdPartyOrderService'</Link>
-        <Link to={'/menuChanger'}>'/menuChanger'</Link>
-        <Link to={'/forceSMSAuth'}>'/forceSMSAuth'</Link>
-        <Link to={'/showUserOrderDetail'}>'/showUserOrderDetail'</Link>
-        <Link to={'/menuManager'}>'/menuManager'</Link>
-        <Link to={'/tastingOrderer'}>'/tastingOrderer'</Link>
-        <Link to={'/collectionThirdPartyOrder'}>'/collectionThirdPartyOrder'</Link>
-        <Link to={'/userManagement'}>'/userManagement'</Link>
+        <h1>BigBoss System</h1>
+        <ul>
+          <li>주소 변환 - <Link to={'/addressBulldozer'}>'/addressBulldozer'</Link></li>
+          <li>주문시간 수정 - <Link to={'/timeChanger'}>'/timeChanger'</Link></li>
+          <li>외부 배달 접수 - <Link to={'/thirdPartyOrderService'}>'/thirdPartyOrderService'</Link></li>
+          <li>주문메뉴 수정 - <Link to={'/menuChanger'}>'/menuChanger'</Link></li>
+          <li>SMS 인증 - <Link to={'/forceSMSAuth'}>'/forceSMSAuth'</Link></li>
+          <li>사용자 주문 정보 조회 - <Link to={'/showUserOrderDetail'}>'/showUserOrderDetail'</Link></li>
+          <li>음식메뉴 관리 - <Link to={'/menuManager'}>'/menuManager'</Link></li>
+          <li>테이스 관리 - <Link to={'/tastingOrderer'}>'/tastingOrderer'</Link></li>
+          <li>외부 배달 일괄접수 - <Link to={'/collectionThirdPartyOrder'}>'/collectionThirdPartyOrder'</Link></li>
+          <li>회원 관리 - <Link to={'/userManagement'}>'/userManagement'</Link></li>
+        </ul>
       </div>
       <hr />
       <div>

@@ -18,6 +18,7 @@ class OrderTable extends Component {
     return cell.split(",").join("<br/>")
   }
 
+
   render() {
     if (!this.props.orders) {
       return null
@@ -26,11 +27,11 @@ class OrderTable extends Component {
     return (
       <BootstrapTable data={this.props.orders[0]} search={true}>
         <TableHeaderColumn dataField="idx" isKey={true} dataSort={true} width="120">주문 No.</TableHeaderColumn>
-        <TableHeaderColumn dataField="nickname" dataSort={true}>회원이름</TableHeaderColumn>
+        <TableHeaderColumn dataField="nickname" dataSort={true} width="120">회원이름</TableHeaderColumn>
         <TableHeaderColumn dataField="addr_no">주소</TableHeaderColumn>
         <TableHeaderColumn dataField="MENU_NAME" dataFormat={this.menuFormatter}>메뉴</TableHeaderColumn>
-        <TableHeaderColumn dataField="time_slot" dataSort={true} width="150">시간대</TableHeaderColumn>
-        <TableHeaderColumn>관리</TableHeaderColumn>
+        <TableHeaderColumn dataField="time_slot" dataSort={true} width="130">시간대</TableHeaderColumn>
+        <TableHeaderColumn width="100">관리</TableHeaderColumn>
       </BootstrapTable>
     )
   }
